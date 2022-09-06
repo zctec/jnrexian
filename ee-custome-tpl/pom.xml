@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--直接继承business的pom，独立项目自身不维护版本，直接打包执行-->
+    <parent>
+        <groupId>com.econage.ee</groupId>
+        <artifactId>business-group</artifactId>
+        <version>2022.2.0</version>
+        <relativePath/>
+    </parent>
+
+    <artifactId>shandong-extend-pj</artifactId>
+    <packaging>jar</packaging>
+    <modelVersion>4.0.0</modelVersion>
+
+    <repositories>
+        <repository>
+            <id>innerMaven</id>
+            <name>innerMaven</name>
+            <url>http://192.168.1.237:8081/repository/public/</url>
+        </repository>
+    </repositories>
+    
+    <dependencies>
+
+        <dependency>
+            <groupId>com.econage.ee</groupId>
+            <artifactId>business-bpm95-starter</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
